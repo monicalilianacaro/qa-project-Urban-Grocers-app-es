@@ -71,13 +71,13 @@ def test_create_kit_has_space_in_name_get_success_response():
     positive_assert("A Aaa")
 
 # Función de prueba (Test Case 7)
-def test_create_kit_has_number_in_name_get_succes_response():
+def test_create_kit_has_number_in_name_get_success_response():
     positive_assert("123")
 
 # Función de prueba (Test Case 8)
 def test_create_kit_no_name_in_body_get_error_response():
-    response_kit = sender_stand_request.post_new_user(data.user_body)
-    auth_token = response_kit.json()["authToken"]
+    response_user = sender_stand_request.post_new_user(data.user_body)
+    auth_token = response_user.json()["authToken"]
     #Enviar el cuerpo vacío (sin el campo "name")
     kit_body = {}
     response_kit = sender_stand_request.post_new_client_kit(kit_body, auth_token)
