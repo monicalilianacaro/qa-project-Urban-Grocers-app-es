@@ -13,7 +13,7 @@ def get_kit_body(name):
     current_body["name"] = name
     return current_body
 
-# 2. Función auxiliar para pruebas exitosas (assertss positivos)
+# 2. Función auxiliar para pruebas positivas
 def positive_assert(name):
     #Paso A: Crear el usuario para obtener su token
     # Llama a post_new_user para registrar un usuario de prueba en la API y extrae su "authToken"
@@ -35,7 +35,7 @@ def positive_assert(name):
     assert response_kit.status_code == 201
     assert response_kit.json()["name"] == name
 
-# 3. Función auxiliar para casos que deben devolver error 400
+# 3. Función auxiliar para pruebas negativas
 def negative_assert_code_400(name):
     response_user = sender_stand_request.post_new_user(data.user_body)
     auth_token = response_user.json()["authToken"]
